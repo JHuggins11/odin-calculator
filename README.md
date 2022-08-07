@@ -1,2 +1,2 @@
 # odin-calculator
- Basic calculator in JavaScript for The Odin Project's Foundations course. 
+A basic calculator in JavaScript as part of the JavaScript Fundamentals module of The Odin Project's Foundations course.
