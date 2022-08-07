@@ -1,3 +1,11 @@
+const container = document.querySelector("#container");
+const calculator = document.querySelector("#calculator");
+const calcDisplay = document.querySelector("#calc-display");
+const operatorKeys = document.querySelectorAll(".operator-button");
+const numberKeys = document.querySelectorAll(".number-button");
+const clearKey = document.querySelector("#clear");
+const equalsKey = document.querySelector("#equals");
+
 function add(num1, num2) {
     return num1 + num2;
 }
