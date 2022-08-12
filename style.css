@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+#calc-display,
+#calc-operators,
+#calc-numbers {
+    display: grid;
+    width: 200px;
+}
+
+#calc-display,
+#calc-operators {
+    height: 30px;
+}
+
+#calc-operators {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+#calc-numbers {
+    grid-template-columns: repeat(3, 1fr);
+    height: 150px;
+}
