@@ -7,6 +7,9 @@ const clearKey = document.querySelector("#clear");
 const equalsKey = document.querySelector("#equals");
 const decimalPointKey = document.querySelector("#decimal-point");
 
+let displayVal = 0;
+calcDisplay.textContent = displayVal;
+
 function add(num1, num2) {
     return num1 + num2;
 }
