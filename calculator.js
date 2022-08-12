@@ -6,45 +6,44 @@ const numberKeys = document.querySelectorAll(".number-button");
 const clearKey = document.querySelector("#clear");
 const equalsKey = document.querySelector("#equals");
 const decimalPointKey = document.querySelector("#decimal-point");
-let displayVal = calcDisplay.textContent;
 
 // Populate calculator display when number keys are pressed
 numberKeys.forEach((key) => {    
     key.addEventListener("click", () => {
-        displayVal = calcDisplay.textContent;
+        const displayVal = calcDisplay.textContent;
 
         if (displayVal === "0" || displayVal === "+" || displayVal === "-" 
             || displayVal === "x" || displayVal === "÷") {
-            displayVal = key.textContent;
+            calcDisplay.textContent = key.textContent;
         }
         else {
-            displayVal += key.textContent;
+            calcDisplay.textContent += key.textContent;
         }        
     });
 });
 
-/* Store values and run selected operation when equals key is pressed
+// Store values and run selected operation when equals key is pressed
 operatorKeys.forEach((key) => {
-    let firstVal = displayVal;
+    let firstVal = calcDisplay.textContent;
     let operator, secondVal;
 
     key.addEventListener("click", () => {
-        if (operator !== null && key.id === "equals") {
-            secondVal = displayVal;
-            displayVal = operate(firstVal, secondVal, operator);
+        if ((operator !== null) && (key === equalsKey)) {
+            secondVal = calcDisplay.textContent;
+            calcDisplay.textContent = operate(firstVal, secondVal, operator);
         }
         else {
             operator = key.id;
-            displayVal = key.textContent;
+            calcDisplay.textContent = key.textContent;
         }
     });
-}); */
+});
 
 clearKey.addEventListener("click", initialiseDisplay);
 
-// Clear display and set the value to 0
+// Clear display and set value to 0
 function initialiseDisplay() {
-    displayVal = 0;
+    calcDisplay.textContent = 0;
 }
 
 function add(num1, num2) {
