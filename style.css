@@ -9,6 +9,11 @@
     width: 200px;
 }
 
+#calc-display,
+#calc-operators {
+    margin-bottom: 5px;
+}
+
 #calc-operators,
 #calc-numbers {
     gap: 4px;
@@ -19,11 +24,11 @@
     font-size: 30px;
     justify-content: right;
     align-items: center;
+    border: 1px solid #000;
 }
 
 #calc-operators {
     grid-template-columns: repeat(5, 1fr);
-    margin-bottom: 5px;
     height: 30px;
 }
 
