@@ -22,7 +22,3 @@
     grid-template-columns: repeat(3, 1fr);
     height: 150px;
 }
-
-#equals {
-    grid-column: 3;
-}
