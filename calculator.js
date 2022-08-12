@@ -6,28 +6,45 @@ const numberKeys = document.querySelectorAll(".number-button");
 const clearKey = document.querySelector("#clear");
 const equalsKey = document.querySelector("#equals");
 const decimalPointKey = document.querySelector("#decimal-point");
-let displayVal;
+let displayVal = calcDisplay.textContent;
 
 // Populate calculator display when number keys are pressed
 numberKeys.forEach((key) => {    
     key.addEventListener("click", () => {
         displayVal = calcDisplay.textContent;
 
-        if (displayVal === "0") {
-            calcDisplay.textContent = key.textContent;
+        if (displayVal === "0" || displayVal === "+" || displayVal === "-" 
+            || displayVal === "x" || displayVal === "÷") {
+            displayVal = key.textContent;
         }
         else {
-            calcDisplay.textContent += key.textContent;
+            displayVal += key.textContent;
         }        
     });
 });
+
+/* Store values and run selected operation when equals key is pressed
+operatorKeys.forEach((key) => {
+    let firstVal = displayVal;
+    let operator, secondVal;
+
+    key.addEventListener("click", () => {
+        if (operator !== null && key.id === "equals") {
+            secondVal = displayVal;
+            displayVal = operate(firstVal, secondVal, operator);
+        }
+        else {
+            operator = key.id;
+            displayVal = key.textContent;
+        }
+    });
+}); */
 
 clearKey.addEventListener("click", initialiseDisplay);
 
 // Clear display and set the value to 0
 function initialiseDisplay() {
-    calcDisplay.textContent = 0;
-    displayVal = calcDisplay.textContent;
+    displayVal = 0;
 }
 
 function add(num1, num2) {
