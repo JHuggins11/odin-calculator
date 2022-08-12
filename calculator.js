@@ -6,9 +6,7 @@ const numberKeys = document.querySelectorAll(".number-button");
 const clearKey = document.querySelector("#clear");
 const equalsKey = document.querySelector("#equals");
 const decimalPointKey = document.querySelector("#decimal-point");
-
-calcDisplay.textContent = 0;
-let displayVal = calcDisplay.textContent;
+let displayVal;
 
 // Populate calculator display when number keys are pressed
 numberKeys.forEach((key) => {    
@@ -23,6 +21,14 @@ numberKeys.forEach((key) => {
         }        
     });
 });
+
+clearKey.addEventListener("click", initialiseDisplay);
+
+// Clear display and set the value to 0
+function initialiseDisplay() {
+    calcDisplay.textContent = 0;
+    displayVal = calcDisplay.textContent;
+}
 
 function add(num1, num2) {
     return num1 + num2;
@@ -56,3 +62,5 @@ function operate(num1, num2, operator) {
             break;
     }
 }
+
+initialiseDisplay();
