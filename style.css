@@ -28,8 +28,10 @@
 #calc-display {
     height: 50px;
     font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     justify-content: right;
     align-items: center;
+    padding: 2px;
     border: 1px solid #000;
 }
 
