@@ -9,24 +9,22 @@
     width: 200px;
 }
 
-#calc-display,
-#calc-operators {
-    height: 30px;
-}
-
 #calc-operators,
 #calc-numbers {
     gap: 4px;
 }
 
 #calc-display {
-    font-size: 24px;
-    text-align: right;
+    height: 50px;
+    font-size: 30px;
+    justify-content: right;
+    align-items: center;
 }
 
 #calc-operators {
     grid-template-columns: repeat(5, 1fr);
     margin-bottom: 5px;
+    height: 30px;
 }
 
 #calc-numbers {
