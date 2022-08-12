@@ -7,8 +7,22 @@ const clearKey = document.querySelector("#clear");
 const equalsKey = document.querySelector("#equals");
 const decimalPointKey = document.querySelector("#decimal-point");
 
-let displayVal = 0;
-calcDisplay.textContent = displayVal;
+calcDisplay.textContent = 0;
+let displayVal = calcDisplay.textContent;
+
+// Populate calculator display when number keys are pressed
+numberKeys.forEach((key) => {    
+    key.addEventListener("click", () => {
+        displayVal = calcDisplay.textContent;
+
+        if (displayVal === "0") {
+            calcDisplay.textContent = key.textContent;
+        }
+        else {
+            calcDisplay.textContent += key.textContent;
+        }        
+    });
+});
 
 function add(num1, num2) {
     return num1 + num2;
