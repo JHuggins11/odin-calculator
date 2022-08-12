@@ -5,6 +5,7 @@ const operatorKeys = document.querySelectorAll(".operator-button");
 const numberKeys = document.querySelectorAll(".number-button");
 const clearKey = document.querySelector("#clear");
 const equalsKey = document.querySelector("#equals");
+const decimalPointKey = document.querySelector("#decimal-point");
 
 function add(num1, num2) {
     return num1 + num2;
