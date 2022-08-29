@@ -42,8 +42,15 @@ equalsKey.addEventListener("click", () => {
     expr[0] = parseInt(expr[0]);
     expr[2] = parseInt(expr[2]);
 
-    total = operate(expr[0], expr[1], expr[2]);
-    calcDisplay.textContent = total;
+    // Show error message if the calculation will divide by 0
+    if ((expr[1] === "divide") && (expr[2] === 0)) {
+        alert("Error: Cannot divide by 0. The calculator has been reset.");
+        initialiseDisplay();
+    }
+    else {
+        total = operate(expr[0], expr[1], expr[2]);
+        calcDisplay.textContent = total;
+    }
 });
 
 clearKey.addEventListener("click", initialiseDisplay);
