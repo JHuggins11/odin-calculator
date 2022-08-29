@@ -6,9 +6,11 @@ const numberKeys = document.querySelectorAll(".number-button");
 const clearKey = document.querySelector("#clear");
 const equalsKey = document.querySelector("#equals");
 const decimalPointKey = document.querySelector("#decimal-point");
+let expr = []; // array containing expression: index 0 = first value, index 1 = operator, index 2 = second value
+let total;
 
 // Populate calculator display when number keys are pressed
-numberKeys.forEach((key) => {    
+numberKeys.forEach((key) => {
     key.addEventListener("click", () => {
         const displayVal = calcDisplay.textContent;
 
@@ -22,21 +24,26 @@ numberKeys.forEach((key) => {
     });
 });
 
-// Store values and run selected operation when equals key is pressed
+// Store first operand and selected operator in expr array after an operator key is pressed
 operatorKeys.forEach((key) => {
-    let firstVal = calcDisplay.textContent;
-    let operator, secondVal;
-
     key.addEventListener("click", () => {
-        if ((operator !== null) && (key === equalsKey)) {
-            secondVal = calcDisplay.textContent;
-            calcDisplay.textContent = operate(firstVal, secondVal, operator);
-        }
-        else {
-            operator = key.id;
-            calcDisplay.textContent = key.textContent;
-        }
+        expr[0] = calcDisplay.textContent;
+        console.log(`First value: ${expr[0]}`);
+        expr[1] = key.id;
+        calcDisplay.textContent = key.textContent;
     });
+});
+
+// Store second operand in expr array and execute calculation, storing the result 
+equalsKey.addEventListener("click", () => {
+    expr[2] = calcDisplay.textContent; // second value
+
+    // Parse string numbers as integers
+    expr[0] = parseInt(expr[0]);
+    expr[2] = parseInt(expr[2]);
+
+    total = operate(expr[0], expr[1], expr[2]);
+    calcDisplay.textContent = total;
 });
 
 clearKey.addEventListener("click", initialiseDisplay);
@@ -62,20 +69,16 @@ function divide(num1, num2) {
     return num1 / num2;
 }
 
-function operate(num1, num2, operator) {
+function operate(num1, operator, num2) {
     switch (operator) {
         case "add":
-            add(num1, num2);
-            break;
+            return add(num1, num2);
         case "subtract":
-            subtract(num1, num2);
-            break;
+            return subtract(num1, num2);
         case "multiply":
-            multiply(num1, num2);
-            break;
+            return multiply(num1, num2);
         case "divide":
-            divide(num1, num2);
-            break;
+            return divide(num1, num2);
     }
 }
 
