@@ -48,9 +48,10 @@ equalsKey.addEventListener("click", () => {
 
 clearKey.addEventListener("click", initialiseDisplay);
 
-// Clear display and set value to 0
+// Clear display, set value to 0 and reset total
 function initialiseDisplay() {
     calcDisplay.textContent = 0;
+    total = 0;
 }
 
 function add(num1, num2) {
