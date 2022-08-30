@@ -42,9 +42,13 @@ equalsKey.addEventListener("click", () => {
     expr[0] = parseInt(expr[0]);
     expr[2] = parseInt(expr[2]);
 
-    // Show error message if the calculation will divide by 0
+    // Show error message if the calculation will divide by 0 or no operator has been selected
     if ((expr[1] === "divide") && (expr[2] === 0)) {
         alert("Error: Cannot divide by 0. The calculator has been reset.");
+        initialiseDisplay();
+    }
+    else if (expr[1] === undefined) {
+        alert("Error: No operator has been selected; cannot perform operation. The calculator has been reset.");
         initialiseDisplay();
     }
     else {
