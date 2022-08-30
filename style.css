@@ -27,6 +27,7 @@
 
 #calc-display {
     height: 50px;
+    overflow: hidden;
     font-size: 30px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     justify-content: right;
