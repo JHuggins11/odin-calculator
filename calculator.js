@@ -19,7 +19,7 @@ numberKeys.forEach((key) => {
             calcDisplay.textContent = key.textContent;
         }
         // Stop display from overflowing
-        else if (displayVal.length === 11) {
+        else if (displayVal.length > 15) {
             return;
         }
         else {
