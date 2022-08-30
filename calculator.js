@@ -18,6 +18,10 @@ numberKeys.forEach((key) => {
             || displayVal === "x" || displayVal === "÷") {
             calcDisplay.textContent = key.textContent;
         }
+        // Stop display from overflowing
+        else if (displayVal.length === 11) {
+            return;
+        }
         else {
             calcDisplay.textContent += key.textContent;
         }        
