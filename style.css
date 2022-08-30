@@ -10,7 +10,7 @@
 }
 
 #calculator {
-    width: 200px;
+    width: 300px;
     padding: 6px;
     border: 3px solid rgba(0, 149, 255, 0.74);
 }
@@ -38,10 +38,10 @@
 
 #calc-operators {
     grid-template-columns: repeat(5, 1fr);
-    height: 30px;
+    height: 40px;
 }
 
 #calc-numbers {
     grid-template-columns: repeat(3, 1fr);
-    height: 150px;
+    height: 200px;
 }
